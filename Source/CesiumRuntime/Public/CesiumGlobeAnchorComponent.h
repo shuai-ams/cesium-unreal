@@ -255,7 +255,7 @@ public:
    * ellipsoid normal.
    */
   UFUNCTION(BlueprintCallable, CallInEditor, Category = "Cesium")
-  void SetRotationOffset(const FRotator& rotationOffset);
+  void SetRotationOffset(const FQuat& rotationOffset);
 
 public:
   /**

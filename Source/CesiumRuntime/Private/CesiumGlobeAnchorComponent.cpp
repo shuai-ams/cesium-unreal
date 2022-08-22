@@ -179,10 +179,14 @@ void UCesiumGlobeAnchorComponent::SnapToEastSouthUp() {
 }
 
 void UCesiumGlobeAnchorComponent::SetRotationOffset(
-    const FRotator& rotationOffset) {
-  const FQuat& q = rotationOffset.Quaternion();
-  const glm::dquat r = glm::dquat(q.X, q.Y, q.Z, q.W);
+    const FQuat& rotationOffset) {
+  const glm::dquat r = glm::dquat(
+      rotationOffset.W,
+      rotationOffset.X,
+      rotationOffset.Y,
+      rotationOffset.Z);
   _rotationOffset = glm::mat3_cast(glm::normalize(r));
+  //_rotationOffset = glm::mat3_cast(r);
 }
 
 ACesiumGeoreference* UCesiumGlobeAnchorComponent::ResolveGeoreference() {
