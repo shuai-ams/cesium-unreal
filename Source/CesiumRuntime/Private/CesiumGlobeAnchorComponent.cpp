@@ -186,7 +186,6 @@ void UCesiumGlobeAnchorComponent::SetRotationOffset(
       rotationOffset.Y,
       rotationOffset.Z);
   _rotationOffset = glm::mat3_cast(glm::normalize(r));
-  //_rotationOffset = glm::mat3_cast(r);
 }
 
 ACesiumGeoreference* UCesiumGlobeAnchorComponent::ResolveGeoreference() {
